@@ -3,19 +3,19 @@ layout: default
 ---
 
 
-**_Professional Self-Assesment_**
+### Professional Self-Assesment
 
 My experience in the SNHU Computer Science program has taught me a lot. Not always what I expected to learn, but many important lessons for life and work. There were many cases of course work falling outside of my career aspirations. The computer graphics work, for example, which I did not want to complete. Because I had no interest in the subject matter, results, or industry - I struggled with that course. But there was a unique reward in completing the course. I gained a new respect for the software environment. Which was the source of most of my problems in that course. This highlighted a thread which ran through all my previous software experience. That the software environment is an important and often overlooked aspect of development. Immediately, I saw where environment issues were causing delays in development at work. This lesson is something hard to teach and difficult to forget. It is one of many such lessons that I can now bring forward with me into my career.
 
- Collaboration is not evident in this portfolio, but it was core to each course in this degree. Every course had a group discussion running parallel with the material and assignments. This discussion was as valuable as the material. In some cases, it was the most valuable. There is unlimited information available to any developer. But when you don't know the right question, it is difficult to find the right answer. This is another lesson that takes time and hands-on experience to learn. Many times, the discussions and knowledge sharing saved me hours of research. My approach to new problems at work has become much more collaborative. Because now my options are clear. Save my ego and never look like I don't know something. Or ask others what they already know and save my time. 
+Collaboration is not evident in this portfolio, but it was core to each course in this degree. Every course had a group discussion running parallel with the material and assignments. This discussion was as valuable as the material. In some cases, it was the most valuable. There is unlimited information available to any developer. But when you don't know the right question, it is difficult to find the right answer. This is another lesson that takes time and hands-on experience to learn. Many times, the discussions and knowledge sharing saved me hours of research. My approach to new problems at work has become much more collaborative. Because now my options are clear. Save my ego and never look like I don't know something. Or ask others what they already know and save my time. 
 
- The rest of this ePortfolio showcases the technical skills gained in the program. The portfolio centers around one artifact and three enhancements. In CS-340 (Client Server Development), we built a company dashboard application. This was a full stack application using Dash, Python, and MongoDB. The three enhancements showcase skill development in three categories. The categories of: "Software Design and Engineering", "Algorithms and Data Structures", and "Databases". The first enhancement is a Software Design Document. The second enhancement is a token-based authorization system. The third enhancement is user interactive CRUD functionality.
-
-
+The rest of this ePortfolio showcases the technical skills gained in the program. The portfolio centers around one artifact and three enhancements. In CS-340 (Client Server Development), we built a company dashboard application. This was a full stack application using Dash, Python, and MongoDB. The three enhancements showcase skill development in three categories. The categories of: "Software Design and Engineering", "Algorithms and Data Structures", and "Databases". The first enhancement is a Software Design Document. The second enhancement is a token-based authorization system. The third enhancement is user interactive CRUD functionality.
 
 
 
-**_Code Review_**
+
+
+## Code Review
 
 Code reviews are an important step in the software development process. They can help identify bugs, performance issues, and vulnerabilities. They also ensures compliance and adherence to industry standards. Code review can also promote a collaborative development environment. Though the reviews might seem painful. If done constructively, the developers can gain a lot from the process. 
 
@@ -31,7 +31,7 @@ The full code review is available [here](https://drive.google.com/drive/folders/
 
 
 
-**_Enhancement One - Software Design and Engineering_**
+## Enhancement One - Software Design and Engineering
 
 This artifact was not included in the original CS-340 project. I saw room for a software design document. Writing these documents was an assignment in a few other courses. Including this in CS-340 would have been valuable. Then again, many students see the SDD as getting in the way of the coding content of the class. But I have been working in software for two years. I now see the value in understanding the original designs of an application. 
 
