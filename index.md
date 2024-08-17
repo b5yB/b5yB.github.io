@@ -11,7 +11,6 @@ Collaboration is not evident in this portfolio, but it was core to each course i
 
 The rest of this ePortfolio showcases the technical skills gained in the program. The portfolio centers around one artifact and three enhancements. In CS-340 (Client Server Development), we built a company dashboard application. This was a full stack application using Dash, Python, and MongoDB. The three enhancements showcase skill development in three categories. The categories of: "Software Design and Engineering", "Algorithms and Data Structures", and "Databases". The first enhancement is a Software Design Document. The second enhancement is a token-based authorization system. The third enhancement is user interactive CRUD functionality.
 
->
 
 ### Code Review
 
@@ -23,9 +22,8 @@ The goal of code reviews is avoid errors in production code. So it should happen
 
 My code review was recorded with ScreenPal. The review does start with the end in mind. It used an outline that included the goals of the capstone improvements. The focus was on finding errors and identifying areas for improvement. 
 
-The full code review is available [here](https://drive.google.com/drive/folders/1Pq5_oSiOKD_sdR8QveYq3-UdLQvCF-kj?usp=drive_link).
+_The full code review is available [here](https://drive.google.com/drive/folders/1Pq5_oSiOKD_sdR8QveYq3-UdLQvCF-kj?usp=drive_link)._
 
->
 
 ### Enhancement One - Software Design and Engineering
 
@@ -37,11 +35,10 @@ This artifact was not included in the original CS-340 project. I saw room for a 
 
 As I wrote the SDD, I realized how inexperienced I was with software architecture. The challenge was in designing my planned enhancements. The software design documents I wrote in previous classes came with planned architecture. Planning  something new required a lot of thought, diagramming, and pseudo-code. So it was a valuable experience. I plan to use all this at work in the very near future.  
 
->
 
 _Excerpt from the SDD:_
-> Design Constraints 
 
+> Design Constraints 
 > The Grazioso Salvare web app comes with unique constraints. The following factors guide our design. 
 > We must stick to a set timeline for development, testing, and release. This means meeting milestones and deadlines. This requires good project management, prioritization, and streamlined development. 
 > Grazioso Salvare expects the app to grow. It must be able to handle more users and data. So, the design needs to easily scale up. This means using tech that allows the app to grow without losing speed. 
@@ -49,15 +46,78 @@ _Excerpt from the SDD:_
 > The app may need to connect with legacy systems or external apps. So it needs to work with existing systems and share data. This needs thorough planning to avoid issues and keep data secure. 
 > These are our critical design constraints. Meeting them well will ensure a secure, scalable, and user-friendly app that meets requirements. 
 
->
 
-The goal of this enhancement was to meet these outcomes:  
+The goal of this enhancement was to meet these course outcomes:  
 * Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision-making in the field of computer science.  
 * Design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.  
 
-The full artifact is available [here](https://docs.google.com/document/d/1M5LXvOl6ZkGq1Qb3N8o2LZ87tHONZpiK/edit?usp=drive_link&ouid=101641056580444605866&rtpof=true&sd=true).
+_The full artifact is available [here](https://docs.google.com/document/d/1M5LXvOl6ZkGq1Qb3N8o2LZ87tHONZpiK/edit?usp=drive_link&ouid=101641056580444605866&rtpof=true&sd=true)._
 
->
+
+### Enhancement Two - Algorithms and Data Structure
+
+The original application from CS-340 was stood up in only a couple weeks. It was impressive how short the development time was. Which inspired me to want to learn more about this development stack. At the same time, I knew this was a basic application with a lot of room for improvement. One area for improvement was login functionality.
+
+So I built out the login with token based authorization using a JWT library for Python. This enhancement is not perfect. But it is most of the way there. It is able to generate the tokens and pass them between client and server during login. This is a major improvement to the security of the app.  
+
+```python
+def generate_token(username):
+    payload = {
+        'exp': datetime.now(timezone.utc) + timedelta(hours=1),
+        'iat': datetime.now(timezone.utc),
+        'sub': username
+    }
+    token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
+    print(f"generated token: {token}")
+    return token
+
+def decode_token(token):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        print(f"decoded token: {payload}")
+        return payload['sub']
+    except jwt.ExpiredSignatureError:
+        print("expired token")
+        return None
+    except jwt.InvalidTokenError:
+        print("invalid token")
+        return None
+
+def token_required(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = request.headers.get('Authorization')
+        if not token:
+            print("token_required missing token")
+            return jsonify({'message': 'missing token'}), 403
+
+        try:
+            data = decode_token(token)
+        except:
+            print("token_required invalid token")
+            return jsonify({'message': 'token_required invalid token'}), 403
+
+        print(f"token_required success: {data}")
+        return f(*args, **kwargs)
+    return decorated
+```
+
+Any time I built out token based authorization in the past - I had a guide to follow. So I understood the process from a high-level. But I was not clear on the granular details. Also, I was not familiar with Python aside from brief exposure in the class. So most of the time spent on this enhancement was research. 
+
+The goal of this enhancement was to meet this course outcome:
+* Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources.  
+
+_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/AacCrud.py)._ 
+
+_The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
+
+
+
+
+
+
+
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
