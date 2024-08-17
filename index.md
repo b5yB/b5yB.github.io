@@ -11,11 +11,9 @@ Collaboration is not evident in this portfolio, but it was core to each course i
 
 The rest of this ePortfolio showcases the technical skills gained in the program. The portfolio centers around one artifact and three enhancements. In CS-340 (Client Server Development), we built a company dashboard application. This was a full stack application using Dash, Python, and MongoDB. The three enhancements showcase skill development in three categories. The categories of: "Software Design and Engineering", "Algorithms and Data Structures", and "Databases". The first enhancement is a Software Design Document. The second enhancement is a token-based authorization system. The third enhancement is user interactive CRUD functionality.
 
+>
 
-
-
-
-## Code Review
+### Code Review
 
 Code reviews are an important step in the software development process. They can help identify bugs, performance issues, and vulnerabilities. They also ensures compliance and adherence to industry standards. Code review can also promote a collaborative development environment. Though the reviews might seem painful. If done constructively, the developers can gain a lot from the process. 
 
@@ -27,11 +25,9 @@ My code review was recorded with ScreenPal. The review does start with the end i
 
 The full code review is available [here](https://drive.google.com/drive/folders/1Pq5_oSiOKD_sdR8QveYq3-UdLQvCF-kj?usp=drive_link).
 
+>
 
-
-
-
-## Enhancement One - Software Design and Engineering
+### Enhancement One - Software Design and Engineering
 
 This artifact was not included in the original CS-340 project. I saw room for a software design document. Writing these documents was an assignment in a few other courses. Including this in CS-340 would have been valuable. Then again, many students see the SDD as getting in the way of the coding content of the class. But I have been working in software for two years. I now see the value in understanding the original designs of an application. 
 
@@ -41,8 +37,9 @@ This artifact was not included in the original CS-340 project. I saw room for a 
 
 As I wrote the SDD, I realized how inexperienced I was with software architecture. The challenge was in designing my planned enhancements. The software design documents I wrote in previous classes came with planned architecture. Planning  something new required a lot of thought, diagramming, and pseudo-code. So it was a valuable experience. I plan to use all this at work in the very near future.  
 
+>
 
-Excerpt from the SDD:
+_Excerpt from the SDD:_
 > Design Constraints 
 
 > The Grazioso Salvare web app comes with unique constraints. The following factors guide our design. 
@@ -52,6 +49,7 @@ Excerpt from the SDD:
 > The app may need to connect with legacy systems or external apps. So it needs to work with existing systems and share data. This needs thorough planning to avoid issues and keep data secure. 
 > These are our critical design constraints. Meeting them well will ensure a secure, scalable, and user-friendly app that meets requirements. 
 
+>
 
 The goal of this enhancement was to meet these outcomes:  
 * Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision-making in the field of computer science.  
@@ -59,9 +57,7 @@ The goal of this enhancement was to meet these outcomes:  
 
 The full artifact is available [here](https://docs.google.com/document/d/1M5LXvOl6ZkGq1Qb3N8o2LZ87tHONZpiK/edit?usp=drive_link&ouid=101641056580444605866&rtpof=true&sd=true).
 
-
-
-
+>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
