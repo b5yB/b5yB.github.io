@@ -11,6 +11,7 @@ Collaboration is not evident in this portfolio, but it was core to each course i
 
 The rest of this ePortfolio showcases the technical skills gained in the program. The portfolio centers around one artifact and three enhancements. In CS-340 (Client Server Development), we built a company dashboard application. This was a full stack application using Dash, Python, and MongoDB. The three enhancements showcase skill development in three categories. The categories of: "Software Design and Engineering", "Algorithms and Data Structures", and "Databases". The first enhancement is a Software Design Document. The second enhancement is a token-based authorization system. The third enhancement is user interactive CRUD functionality.
 
+<br>
 
 ### Code Review
 
@@ -24,6 +25,7 @@ My code review was recorded with ScreenPal. The review does start with the end i
 
 _The full code review is available [here](https://drive.google.com/drive/folders/1Pq5_oSiOKD_sdR8QveYq3-UdLQvCF-kj?usp=drive_link)._
 
+<br>
 
 ### Enhancement One - Software Design and Engineering
 
@@ -49,6 +51,8 @@ _Excerpt from the SDD:_
 > These are our critical design constraints. Meeting them well will ensure a secure, scalable, and user-friendly app that meets requirements. 
 
 _The full artifact is available [here](https://docs.google.com/document/d/1M5LXvOl6ZkGq1Qb3N8o2LZ87tHONZpiK/edit?usp=drive_link&ouid=101641056580444605866&rtpof=true&sd=true)._
+
+<br>
 
 ### Enhancement Two - Algorithms and Data Structures
 
@@ -107,6 +111,8 @@ Any time I built out token based authorization in the past - I had a guide to fo
 _The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/ProjectTwoDashboard.ipynb)._ 
 
 _The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
+
+<br>
 
 ### Enhancement Three - Databases
 
