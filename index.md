@@ -104,7 +104,7 @@ def token_required(f):
 
 Any time I built out token based authorization in the past - I had a guide to follow. So I understood the process from a high-level. But I was not clear on the granular details. Also, I was not familiar with Python aside from brief exposure in the class. So most of the time spent on this enhancement was research. 
 
-_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/AacCrud.py)._ 
+_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/ProjectTwoDashboard.ipynb)._ 
 
 _The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
 
@@ -150,7 +150,7 @@ def submit_edits(n_clicks, rows, selected_rows):
     return df.to_dict('records')
 ```
 
-_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/AacCrud.py)._ 
+_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/ProjectTwoDashboard.ipynb)._ 
 
 _The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
 
