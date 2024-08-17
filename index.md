@@ -27,18 +27,20 @@ _The full code review is available [here](https://drive.google.com/drive/folders
 
 ### Enhancement One - Software Design and Engineering
 
-This artifact was not included in the original CS-340 project. I saw room for a software design document. Writing these documents was an assignment in a few other courses. Including this in CS-340 would have been valuable. Then again, many students see the SDD as getting in the way of the coding content of the class. But I have been working in software for two years. I now see the value in understanding the original designs of an application. 
+The goal of this enhancement was to meet these course outcomes:  
+* Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision-making in the field of computer science.  
+* Design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.  
 
+This artifact was not included in the original CS-340 project. I saw room for a software design document. Writing these documents was an assignment in a few other courses. Including this in CS-340 would have been valuable. Then again, many students see the SDD as getting in the way of the coding content of the class. But I have been working in software for two years. I now see the value in understanding the original designs of an application. 
 
 ![sequence-diagram](./assets/images/sequence-diagram.png)
 
-
 As I wrote the SDD, I realized how inexperienced I was with software architecture. The challenge was in designing my planned enhancements. The software design documents I wrote in previous classes came with planned architecture. Planning  something new required a lot of thought, diagramming, and pseudo-code. So it was a valuable experience. I plan to use all this at work in the very near future.  
-
 
 _Excerpt from the SDD:_
 
-> Design Constraints 
+> Design Constraints
+> 
 > The Grazioso Salvare web app comes with unique constraints. The following factors guide our design. 
 > We must stick to a set timeline for development, testing, and release. This means meeting milestones and deadlines. This requires good project management, prioritization, and streamlined development. 
 > Grazioso Salvare expects the app to grow. It must be able to handle more users and data. So, the design needs to easily scale up. This means using tech that allows the app to grow without losing speed. 
@@ -46,15 +48,13 @@ _Excerpt from the SDD:_
 > The app may need to connect with legacy systems or external apps. So it needs to work with existing systems and share data. This needs thorough planning to avoid issues and keep data secure. 
 > These are our critical design constraints. Meeting them well will ensure a secure, scalable, and user-friendly app that meets requirements. 
 
-
-The goal of this enhancement was to meet these course outcomes:  
-* Employ strategies for building collaborative environments that enable diverse audiences to support organizational decision-making in the field of computer science.  
-* Design, develop, and deliver professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts.  
-
 _The full artifact is available [here](https://docs.google.com/document/d/1M5LXvOl6ZkGq1Qb3N8o2LZ87tHONZpiK/edit?usp=drive_link&ouid=101641056580444605866&rtpof=true&sd=true)._
 
+### Enhancement Two - Algorithms and Data Structures
 
-### Enhancement Two - Algorithms and Data Structure
+The goal of this enhancement was to meet these course outcome:
+* Design and evaluate computing solutions that solve a given problem using algorithmic principles and computer science practices and standards appropriate to its solution, while managing the trade-offs involved in design choices
+* Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources.  
 
 The original application from CS-340 was stood up in only a couple weeks. It was impressive how short the development time was. Which inspired me to want to learn more about this development stack. At the same time, I knew this was a basic application with a lot of room for improvement. One area for improvement was login functionality.
 
@@ -104,21 +104,58 @@ def token_required(f):
 
 Any time I built out token based authorization in the past - I had a guide to follow. So I understood the process from a high-level. But I was not clear on the granular details. Also, I was not familiar with Python aside from brief exposure in the class. So most of the time spent on this enhancement was research. 
 
+_The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/AacCrud.py)._ 
+
+_The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
+
+### Enhancement Three - Databases
+
 The goal of this enhancement was to meet this course outcome:
-* Develop a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources.  
+* Demonstrate an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals
+
+The original artifact is a full stack application so I was able to hit most of the course outcomes in one go. There were a few full-stack applications made in the Computer Science program. But this was the most interesting to me. Because it was using a development stack that was new to me. This was a chance to skill up and it show that I can adapt to a range of technologies. 
+
+This enhancement was to meant to enable all four database CRUD interactions. Before this, the app only had read functionality. I started this enhancement as an API. I got as far as finishing the create functionality. But I hit a wall with the update functionality. After some research I realized what I was doing was downgrading the technology. The data table had all the UI components built–in for triggering CRUD functions. All I had do was connect them to callbacks. Which then triggers the data interactions. So I was able to get all the CRUD functionality done in a way that was new to me. It was a significant learning experience.
+
+_Update function - code example:_
+```python
+# submit animal edits to the db
+@app.callback(
+    Output('datatable-id', 'data', allow_duplicate=True),
+    [Input('edit-animal-button', 'n_clicks')],
+    [State('datatable-id', 'data'),
+     State('datatable-id', 'selected_rows')],
+    prevent_initial_call=True
+)
+def submit_edits(n_clicks, rows, selected_rows):
+    if n_clicks:
+        if selected_rows:
+            selected_row = selected_rows[0]
+            row_data = rows[selected_row]
+
+            print("row data:", row_data)
+            clean_row_data = {}
+            for key, value in row_data.items():
+                if key != '':
+                    clean_row_data[key] = value
+            print("clean row data:", clean_row_data)
+            
+            try:
+                db.update({'animal_id': clean_row_data['animal_id']}, clean_row_data)
+            except Exception as e:
+                print(e)
+    df = pd.DataFrame.from_records(db.read({}))
+    if '_id' in df.columns:
+        df.drop(columns=['_id'], inplace=True)
+    return df.to_dict('records')
+```
 
 _The original artifact can be found [here](https://github.com/b5yB/cs340/blob/main/CS340-P2-WC/AacCrud.py)._ 
 
 _The enhanced artifact can be found [here](https://github.com/b5yB/cs340/blob/enhanced/CS340-P2-WC/GSDashboard.ipynb)._
 
 
-
-
-
-
-
-
-
+<!-->
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
@@ -238,3 +275,4 @@ Long, single-line code blocks should not wrap. They should horizontally scroll i
 ```
 The final element.
 ```
+<-->
